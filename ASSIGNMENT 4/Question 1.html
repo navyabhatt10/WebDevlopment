@@ -1,0 +1,34 @@
+<html>
+<head>
+    <title>Assignment</title>
+    <style>
+        div{
+            width: 200px;
+            height: 200px;
+            border: 1px solid black;
+            background-color: red;
+            border-radius: 50%;
+        }
+    </style>
+</head>
+<body>
+    <div id="chk" onclick="changeColor()"></div>
+    <script>
+        var digits = "0123456789ABCDEF"; 
+        function randomColor(){
+            low = 0;
+            high = 15;
+            color = '#';
+            for(i=0; i<6; i++){
+                color = color + digits[low + Math.floor(Math.random()*(high+1-low))];
+            }
+            return color;
+        }
+        function changeColor(){
+            x = document.getElementById('chk');
+            color = randomColor();
+            x.style.backgroundColor=color;
+        }
+    </script>
+</body>
+</html>
